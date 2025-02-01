@@ -7,6 +7,7 @@
 - listar as tarefas todas concluidas
 - listar tarefas em andamento
 - listar tarefas nao iniciadas
+- minha lsita de tarefas deve estar em um arquivo json
 
 # classes 
 - adcionar

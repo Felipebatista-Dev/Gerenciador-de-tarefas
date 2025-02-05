@@ -21,3 +21,5 @@
 - mostrar o status de derterminada tarefa
 - listar tarefas concluidas, em andamento, ou nem começadas
 - listar todas tarefas
+
+["lavar lou\u00e7a", "varrer casa", "estudar", "pagar boleto", "fazer comprar", "academia", "fazer barba", "limpar quarto", "jogar lixo fora", "limpar computador", "lavar cabe\u00e7a"]

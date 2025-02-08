@@ -1,1 +1,8 @@
-["lavar lou\u00e7a", "varrer casa", "estudar", "pagar boleto", "fazer comprar", "academia", "fazer barba", "limpar quarto", "jogar lixo fora", "limpar computador", "lavar cabe\u00e7a"]
+{"lavar louça":"naoinciada",
+"varrer casa":"naoiniciada","estudar":"naoiniciada",
+"pagar boleto":"naoinciada","fazercomprar":"naoinciada","academia":"naoiniciada",
+"fazer barba":"naoinciada",
+"limpar quarto":"nao inciada",
+"jogar lixo fora":"nao iniciada", 
+"limpar computador":"nao iniciada",
+"lavar cabeça":"nao iniciada"}

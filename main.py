@@ -16,10 +16,10 @@ while num != 0:
      print('program closed')
      break
   elif num == 1:
-     var1 = input('Enter the task you want to add  ').lower().strip()
+     var1 = input('Enter the task you want to add  \n').lower().strip()
      tasks.add_tasks(var1)
   elif num == 2:
-     var2 = input('Enter the task you want to remove ').lower().strip()
+     var2 = input('Enter the task you want to remove \n').lower().strip()
      tasks.remove_tasks(var2)
   elif num == 3:
      var3 = input('Enter the task that you want to update status ').lower().strip()
@@ -29,11 +29,20 @@ while num != 0:
    #   else:
      tasks.update_tasks(var3,var3_5) 
   elif num == 4:
-     var4 = input('Enter the task you want to show the status ').lower().upper()
+     var4 = input('Enter the task you want to show the status \n').lower().upper()
      statustask = status.show_status(var4)
      print(statustask)
   elif num == 5:
      dictonarie = listtasks.list_all_tasks()
      print(dictonarie)
+  elif num == 6:
+     dictonariec = listtasks.list_completed_tasks()
+     print(dictonariec)
+  elif num == 7:
+     dictonariep = listtasks.list_inprogress_tasks()
+     print(dictonariep)
+  elif num == 8:
+     dictonarien = listtasks.list_notstarted_tasks() 
+     print(dictonarien)
 
    

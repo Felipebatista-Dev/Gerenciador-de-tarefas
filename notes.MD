@@ -1,25 +1,27 @@
-# depois vou decidir se mando essas anotações para o README
+# later I'll decide whether to send these notes to the README
 
-# rastreador de tarefas
-- manusear minha lista de tarefas
-- mostrar uma tarefa como em andamento ou concluida
-- listar todas as tarefas
-- listar as tarefas todas concluidas
-- listar tarefas em andamento
-- listar tarefas nao iniciadas
-- minha lsita de tarefas deve estar em um arquivo json
+# task tracker
+- manage my task list
+- show a task as in progress or completed
+- list all tasks
+- list all completed tasks
+- list ongoing tasks
+- list unstarted tasks
+- my task list should be in a json file
 
-# classes 
-- adcionar
-- atualizar
-- excluir
-- mostrar status
-- listar
+# classes
+- add
+- update
+- delete
+- show status
+- list
 
-# funcionalidades 
-- adcionar,excluir ou atualizar tarefas
-- mostrar o status de derterminada tarefa
-- listar tarefas concluidas, em andamento, ou nem começadas
-- listar todas tarefas
+# features
+- add, delete or update tasks
+- show the status of a given task
+- list completed, in progress, or unstarted tasks
+- list all tasks
 
-["lavar louça", "varrer casa", "estudar", "pagar boleto", "fazer comprar", "academia", "fazer barba", "limpar quarto", "jogar lixo fora", "limpar computador", "lavar cabeça"]
+{"washingdishes": "completed", "sweepinghouse": "inprogress", "studying": "inprogress", "payingbills": "notstarted", "shopping": "completed", "gym": "inprogress", "shaving": "notstarted", "cleaningroom": "completed", "throwingtrashout": "inprogress", "cleaningcomputer": "notstarted", "trabalho": "not started"}
+
+pyinstaller --onefile --add-data "tasklist.json;." main.py

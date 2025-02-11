@@ -1,5 +1,27 @@
-from modules import tasks,listtasks,status
+import sys
+import os
+import json
+from modules import tasks, listtasks, status
 from time import sleep
+
+def get_base_path():
+    return getattr(sys, '_MEIPASS', os.path.abspath("."))
+
+# Caminho do JSON
+caminho_json = os.path.join(get_base_path(), "tasklist.json")
+
+# Verifica se o arquivo JSON existe
+if not os.path.exists(caminho_json):
+    print(f"Erro: O arquivo {caminho_json} não foi encontrado.")
+    input("Pressione ENTER para sair...")  # Mantém a janela aberta para ver o erro
+    sys.exit(1)
+
+# Lê o JSON
+with open(caminho_json, encoding="utf-8") as f:
+    dados = json.load(f)
+
+print("Arquivo JSON carregado com sucesso!")
+
 
 num = -1
 
@@ -7,7 +29,7 @@ while num != 0:
 
   print('Hello, choose an option below using your number')
 
-  num = int(input('1-add task, \n2-remove task, \n3-update task, \n4-show task status, \n5-list all tasks \n6-completed tasks, \n7-list tasks in progress, \n8-list tasks not started \n0-close program \n'))
+  num = int(input('1-add task, \n2-remove task, \n3-update task, \n4-show task status \n5-list all tasks \n6-list completed tasks \n7-list tasks in progress \n8-list tasks not started \n0-close program \n'))
 
   print('loading...')
   sleep(2)
@@ -17,16 +39,17 @@ while num != 0:
      break
   elif num == 1:
      var1 = input('Enter the task you want to add  \n').lower().strip()
-     tasks.add_tasks(var1)
+     var1b = input('now inform the status of the task \n1- not started \n2- in progress \n3- completed \n').lower().strip()
+     try:
+       tasks.add_tasks(var1,var1b)
+     except(TypeError):
+       print('Incorrect values')
   elif num == 2:
      var2 = input('Enter the task you want to remove \n').lower().strip()
      tasks.remove_tasks(var2)
   elif num == 3:
      var3 = input('Enter the task that you want to update status ').lower().strip()
      var3_5 = input('now enter status \n1- not started \n2- in progress \n3- completed \n').lower().strip()
-   # #   if var3_5 != 'notstarted' or var3_5!= 'inprogress' or var3_5 != 'completed':
-   # #      print('incorect values')
-   #   else:
      tasks.update_tasks(var3,var3_5) 
   elif num == 4:
      var4 = input('Enter the task you want to show the status \n').lower().upper()

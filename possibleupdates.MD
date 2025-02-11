@@ -1,0 +1,3 @@
+- improvements in error handling
+- custom window
+- organization of tasks by calendar

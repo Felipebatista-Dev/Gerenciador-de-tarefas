@@ -13,3 +13,5 @@ FEATURES
 - show a complete list of all tasks and also only tasks of a certain status
 
 The project is not yet complete, especially in exception handling. But I'm working daily to finish it and make it as functional as possible.
+
+**Repository on GitHub**: [https://github.com/Felipebatista-Dev/Gerenciador-de-tarefas](https://github.com/Felipebatista-Dev/Gerenciador-de-tarefas)

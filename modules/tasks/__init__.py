@@ -1,21 +1,10 @@
 import json
-import os
-import sys
-
-def get_base_path():
-    return getattr(sys, '_MEIPASS', os.path.abspath("."))
-
-caminho_json = os.path.join(get_base_path(), "tasklist.json")
 
 # Carrega o conteúdo do arquivo JSON
-try:
-    with open(caminho_json, "r", encoding='utf-8') as my_json:
-        data = json.load(my_json)
-        if not isinstance(data, dict):
-            raise ValueError("O conteúdo do arquivo JSON deve ser um dicionário.")
-except Exception as e:
-    print(f"Erro ao carregar o arquivo JSON: {e}")
-    data = {}
+
+with open("tasklist.json", encoding='utf-8') as my_json:
+    data = json.load(my_json)
+      
 
 # I created an object that has the content of the json file
 
@@ -31,7 +20,17 @@ except Exception as e:
 
 def add_tasks(tasksparameter1,taskparameter1b):
     if tasksparameter1 not in data:
-        data[tasksparameter1] = taskparameter1b
+       var = taskparameter1b
+       if var == 1:
+          data[tasksparameter1] = 'notstarted'
+       elif var == 2:
+          data[tasksparameter1] = 'inprogress'
+       elif var == 3:
+          data[tasksparameter1] = 'completed'
+       else:
+          print('Incorrect number')
+    else:
+        print('This task already exists')
     with open("tasklist.json", 'w', encoding='utf-8') as my_json:
       json.dump(data, my_json)
 

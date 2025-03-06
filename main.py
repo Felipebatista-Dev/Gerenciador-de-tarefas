@@ -28,18 +28,19 @@ num = -1
 while num != 0:
 
   print('Hello, choose an option below using your number')
-
-  num = int(input('1-add task, \n2-remove task, \n3-update task, \n4-show task status \n5-list all tasks \n6-list completed tasks \n7-list tasks in progress \n8-list tasks not started \n0-close program \n'))
-
+  try: 
+   num = int(input('1-add task, \n2-remove task, \n3-update task, \n4-show task status \n5-list all tasks \n6-list completed tasks \n7-list tasks in progress \n8-list tasks not started \n0-close program \n'))
+  except(TypeError,ValueError):
+   print('incorrect value, try again')
   print('loading...')
   sleep(2)
-
+  
   if num == 0:
      print('program closed')
      break
   elif num == 1:
      var1 = input('Enter the task you want to add  \n').lower().strip()
-     var1b = input('now inform the status of the task \n1- not started \n2- in progress \n3- completed \n').lower().strip()
+     var1b = int(input('now inform the status of the task \n1- not started \n2- in progress \n3- completed \n'))
      try:
        tasks.add_tasks(var1,var1b)
      except(TypeError):
@@ -67,5 +68,7 @@ while num != 0:
   elif num == 8:
      dictonarien = listtasks.list_notstarted_tasks() 
      print(dictonarien)
+ 
+    
 
    

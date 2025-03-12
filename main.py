@@ -29,7 +29,7 @@ while num != 0:
 
   print('Hello, choose an option below using your number')
   try: 
-   num = int(input('1-add task, \n2-remove task, \n3-update task, \n4-show task status \n5-list all tasks \n6-list completed tasks \n7-list tasks in progress \n8-list tasks not started \n0-close program \n'))
+   num = int(input('1-add task, \n2-remove task \n3-update task \n4-show task status \n5-list all tasks \n6-list completed tasks \n7-list tasks in progress \n8-list tasks not started \n0-close program \n'))
   except(TypeError,ValueError):
    print('incorrect value, try again')
   print('loading...')
@@ -47,11 +47,17 @@ while num != 0:
        print('Incorrect values')
   elif num == 2:
      var2 = input('Enter the task you want to remove \n').lower().strip()
-     tasks.remove_tasks(var2)
+     try:
+       tasks.remove_tasks(var2)
+     except(TypeError):
+       print('Incorrect values')
   elif num == 3:
      var3 = input('Enter the task that you want to update status ').lower().strip()
      var3_5 = input('now enter status \n1- not started \n2- in progress \n3- completed \n').lower().strip()
-     tasks.update_tasks(var3,var3_5) 
+     try:
+       tasks.update_tasks(var3,var3_5) 
+     except(TypeError):
+       print('Incorrect values')
   elif num == 4:
      var4 = input('Enter the task you want to show the status \n').lower().upper()
      statustask = status.show_status(var4)

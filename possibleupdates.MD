@@ -1,4 +1,4 @@
-- improvements in error handling   
+- improvements in error handling V   
 - custom window   
 - organization of tasks by calendar
 - add options for task status  V
